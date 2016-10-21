@@ -15,7 +15,12 @@
 </head>
 <body>
   <div class="page-header" align=center>
-    <h1> Welcome to an OpenShift v3 Demo App! </h1>
+  <h1> Welcome to an OpenShift v3 Demo App! </h1>
+  <% if ENV["COLOR"] %>
+      <img src="./images/<%= ENV["COLOR"] %>.png" width="140" height="90">
+  <% else %>
+      <img src="./images/red.png" width="140" height="90">
+  <% end %>
   </div>
 
   <% if ENV["DATABASE_SERVICE_HOST"].nil? && ENV["DATABASE_TEST_SERVICE_HOST"].nil? %>
